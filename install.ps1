@@ -1,26 +1,43 @@
-$RepoDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-$TargetDir = Join-Path $env:USERPROFILE ".claude\skills\ideate"
+$Target = Join-Path $env:USERPROFILE ".claude\skills\ideate"
+$Repo   = "https://github.com/rutvij26/ideate"
+$Branch = "main"
 
-Write-Host "/ideate install"
-Write-Host "Source: $RepoDir"
-Write-Host "Target: $TargetDir"
+# ── Update path ────────────────────────────────────────────────────────────────
+if (Test-Path (Join-Path $Target ".git")) {
+    Write-Host "/ideate is already installed at $Target"
+    $answer = Read-Host "Update to latest? [Y/n]"
+    if ($answer -match '^[nN]$') {
+        Write-Host "No changes made."
+        exit 0
+    }
+    Push-Location $Target
+    git pull --ff-only
+    Pop-Location
+    Write-Host "Updated. Restart Claude Code to pick up changes."
+    exit 0
+}
 
-if (Test-Path $TargetDir) {
-    $answer = Read-Host "$TargetDir already exists. Overwrite? [y/N]"
+# ── Fresh install ───────────────────────────────────────────────────────────────
+if (Test-Path $Target) {
+    $answer = Read-Host "$Target already exists. Overwrite? [y/N]"
     if ($answer -notmatch '^[yY]$') {
         Write-Host "Install cancelled."
         exit 0
     }
-    Remove-Item -Recurse -Force $TargetDir
+    Remove-Item -Recurse -Force $Target
 }
 
-# Try symlink first (requires admin or Developer Mode on Windows)
-try {
-    New-Item -ItemType Junction -Path $TargetDir -Target $RepoDir | Out-Null
-    Write-Host "Done (junction link). Restart Claude Code and run /ideate."
-} catch {
-    # Fall back to copy
-    Copy-Item -Recurse $RepoDir $TargetDir
-    Write-Host "Done (copy). Note: updates to the repo will not auto-sync. Re-run install.ps1 to update."
-    Write-Host "Restart Claude Code and run /ideate."
+if (Get-Command git -ErrorAction SilentlyContinue) {
+    git clone --depth=1 --branch $Branch $Repo $Target
+} else {
+    Write-Host "git not found — downloading zip instead..."
+    $tmp = Join-Path $env:TEMP "ideate-install-$(Get-Random)"
+    New-Item -ItemType Directory -Force -Path $tmp | Out-Null
+    Invoke-WebRequest "$Repo/archive/refs/heads/$Branch.zip" -OutFile "$tmp\ideate.zip"
+    Expand-Archive "$tmp\ideate.zip" -DestinationPath $tmp -Force
+    Move-Item "$tmp\ideate-$Branch" $Target
+    Remove-Item -Recurse -Force $tmp
 }
+
+Write-Host ""
+Write-Host "Done. Restart Claude Code and run /ideate to get started."

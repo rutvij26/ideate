@@ -4,6 +4,7 @@ An evidence-backed idea validation skill for Claude Code. Takes you from blank p
 
 [![Version](https://img.shields.io/badge/version-0.1.0-blue)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/rutvij26/ideate?style=flat)](https://github.com/rutvij26/ideate/stargazers)
 
 ## Why
 
@@ -15,17 +16,17 @@ Works for founders, OSS devs, internal-tool builders, researchers, and learners.
 
 **Unix / macOS**
 ```bash
-git clone https://github.com/rutvij26/ideate ~/.local/share/ideate
-bash ~/.local/share/ideate/install.sh
+curl -fsSL https://raw.githubusercontent.com/rutvij26/ideate/main/install.sh | bash
 ```
 
 **Windows (PowerShell)**
 ```powershell
-git clone https://github.com/rutvij26/ideate $env:LOCALAPPDATA\ideate
-. $env:LOCALAPPDATA\ideate\install.ps1
+irm https://raw.githubusercontent.com/rutvij26/ideate/main/install.ps1 | iex
 ```
 
-**Manual**: Copy or symlink this repo into `~/.claude/skills/ideate/`.
+Re-run the same command to update to the latest version.
+
+**Manual**: Clone or download this repo and copy/symlink it to `~/.claude/skills/ideate/`.
 
 ## Quick Start
 
