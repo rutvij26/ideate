@@ -1,0 +1,17 @@
+# Runtime output — user's idea files
+ideate/*/
+!ideate/.gitkeep
+
+# User config files — personal, not for version control
+modes/_profile.md
+modes/_custom.md
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
