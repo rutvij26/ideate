@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Evidence-backed idea validation skill for Claude Code",
   "bin": {
-    "ideate": "bin/install.js"
+    "ideate": "installer/install.js"
   },
   "keywords": ["claude", "claude-code", "skill", "ideate", "idea-validation"],
   "author": "rutvij26",
@@ -16,7 +16,7 @@
     "node": ">=18"
   },
   "files": [
-    "bin/",
+    "installer/",
     "install.sh",
     "install.ps1"
   ]

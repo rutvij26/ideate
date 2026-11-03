@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\\\.\\(py|json|txt|js|ts|yaml|yml\\)$\")",
+      "Bash(done)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(cmd.exe /c \"dir C:\\\\Users\\\\rut26\\\\.claude\\\\skills\\\\\")",
+      "Bash(cmd.exe /c dir C:\\\\Users\\\\rut26\\\\.claude\\\\skills)",
+      "Bash(cmd.exe /c \"dir C:\\\\Users\\\\rut26\\\\.claude\\\\skills\")",
+      "Bash(powershell.exe -Command \"Get-Item 'C:\\\\Users\\\\rut26\\\\.claude\\\\skills\\\\ideate' -ErrorAction SilentlyContinue | Select-Object FullName, LinkType, Target\")",
+      "Bash(powershell -Command \"Test-Path 'C:\\\\Users\\\\rut26\\\\.claude\\\\skills\\\\ideate'\")",
+      "Bash(powershell -Command \"Test-Path 'C:\\\\Users\\\\rut26\\\\.claude\\\\skills'\")",
+      "Bash(powershell -Command \"New-Item -ItemType Junction -Path 'C:\\\\Users\\\\rut26\\\\.claude\\\\skills\\\\ideate' -Target 'C:\\\\Users\\\\rut26\\\\OneDrive\\\\Desktop\\\\Repos\\\\skills\\\\ideate'\")",
+      "Bash(powershell -Command \"Test-Path 'C:\\\\Users\\\\rut26\\\\.claude\\\\skills\\\\ideate\\\\SKILL.md'\")",
+      "WebSearch",
+      "Bash(find . -name *.sh -type f -exec head -1 {})",
+      "Bash(2)",
+      "Bash(grep \"\\\\.md$\")",
+      "Bash(head:*)",
+      "Bash(find . -name \"*.md\" -exec grep -l \"modes/\" {})",
+      "Bash(ls:*)",
+      "mcp__claude_ai_Fire_Crawl__firecrawl_search",
+      "WebFetch(domain:docs.github.com)",
+      "Bash(gh run:*)",
+      "Bash(gh api:*)",
+      "Bash(git -C /c/Users/rut26/OneDrive/Desktop/Repos/skills/ideate remote get-url origin)",
+      "Bash(git -C /c/Users/rut26/OneDrive/Desktop/Repos/skills remote get-url origin)",
+      "WebFetch(domain:orangebot.ai)",
+      "WebFetch(domain:dev.to)",
+      "WebFetch(domain:www.unite.ai)",
+      "WebFetch(domain:aicatchup.com)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(python3 -c \"from PIL import Image, ImageDraw, ImageFont; print\\(''PIL ok''\\)\")",
+      "Bash(python -c \"from PIL import Image; print\\(''PIL ok''\\)\")",
+      "Bash(python3:*)"
+    ]
+  }
+}
