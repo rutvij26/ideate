@@ -2,17 +2,11 @@
   "name": "ideate",
   "version": "0.1.0",
   "description": "Evidence-backed idea validation skill for Claude Code. Turn any blank-page idea into a BUILD or KILL verdict using live signal from Reddit, HN, GitHub, and Stack Overflow.",
-  "trigger": "/ideate",
   "author": {
     "name": "Rutvij Sathe",
     "url": "https://github.com/rutvij26"
   },
   "license": "MIT",
   "repository": "https://github.com/rutvij26/ideate",
-  "install": "npx @rutvijsathe/ideate",
-  "entrypoint": "SKILL.md",
-  "keywords": ["idea-validation", "validation", "startup", "research", "evidence", "productivity"],
-  "engines": {
-    "node": ">=18"
-  }
+  "keywords": ["idea-validation", "validation", "startup", "research", "evidence", "productivity"]
 }
