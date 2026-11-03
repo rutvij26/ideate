@@ -2,7 +2,7 @@
 
 An evidence-backed idea validation skill for Claude Code. Takes you from blank page to a BUILD / NARROW / PIVOT / KILL verdict and scoped MVP — without opinion, flattery, or made-up data.
 
-[![Version](https://img.shields.io/badge/version-0.1.0-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.2.0-blue)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/rutvij26/ideate?style=flat)](https://github.com/rutvij26/ideate/stargazers)
 
