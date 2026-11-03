@@ -8,13 +8,14 @@ Loaded during evidence gathering. Contains source map, query patterns, ethics, a
 
 ### Pain Evidence (VALIDATE, IDEATE)
 Best sources for finding real complaints and frustrations:
-- Reddit (specific subreddits for the domain)
-- Hacker News (search.ycombinator.com)
-- Stack Overflow (questions tagged with the relevant technology)
-- Indie Hackers (community discussions)
-- Discord servers for the target community
-- Niche forums specific to the domain (e.g., ProductHunt discussions, Slack communities)
-- GitHub Issues (for technical products: search for issues labelled "enhancement" or "pain")
+- Reddit (specific subreddits for the domain) — `bash scripts/search-reddit.sh "[query]"`
+- Hacker News (search.ycombinator.com) — `bash scripts/search-hn.sh "[query]"`
+- Stack Overflow (questions sorted by votes) — `bash scripts/search-stackoverflow.sh "[query]"`
+- GitHub Issues (sorted by reactions) — `bash scripts/search-github-issues.sh "[query]"`
+- DEV.to (developer articles describing workarounds) — `bash scripts/search-devto.sh "[tag]"`
+- Indie Hackers (community discussions) — manual: https://www.indiehackers.com/search
+- Discord servers for the target community — manual
+- Niche forums specific to the domain (e.g., ProductHunt discussions, Slack communities) — manual
 
 ### Willingness to Pay / Adoption Evidence (VALIDATE)
 Sources for pricing signals and purchase intent:
@@ -27,13 +28,16 @@ Sources for pricing signals and purchase intent:
 
 ### Competitive Landscape (COMPETE)
 Sources for finding competitors:
-- GitHub search (by topic, description, or README keywords)
-- npm, PyPI, crates.io, hex.pm registries (search by problem keyword)
-- ProductHunt (filter by category and launch date)
-- G2 and Capterra categories
-- "Awesome [topic]" lists on GitHub
-- VC portfolio pages (funded = validated market signal)
-- AlternativeTo.net
+- GitHub repos (by topic, description, or README keywords) — `bash scripts/search-github.sh "[query]"`
+- npm registry (JS/TS ecosystem) — `bash scripts/search-npm.sh "[query]"`
+- crates.io (Rust ecosystem, includes download counts) — `bash scripts/search-crates.sh "[query]"`
+- PyPI (Python ecosystem) — manual: https://pypi.org/search/?q=[query] (no JSON search API)
+- hex.pm (Elixir ecosystem) — manual: https://hex.pm/packages?search=[query]
+- ProductHunt (filter by category and launch date) — manual
+- G2 and Capterra categories — manual
+- "Awesome [topic]" lists on GitHub — manual: `bash scripts/search-github.sh "awesome [topic]"`
+- VC portfolio pages (funded = validated market signal) — manual
+- AlternativeTo.net — manual
 
 ### Timing Signals (IDEATE, VALIDATE)
 Sources for demand timing:
@@ -117,6 +121,34 @@ Full protocol is defined in `_shared.md`. When offline mode is active:
 3. [Most likely DIY workaround category]
 
 **Evidence re-entry template is in `modes/templates.md`.**
+
+---
+
+## Scripted Collection
+
+Run all sources at once:
+```bash
+bash scripts/search-all.sh "your query" >> ideate/<slug>/evidence.md
+```
+
+Filter by type:
+```bash
+bash scripts/search-all.sh "your query" --pain-only        # Reddit, HN, SO, GitHub Issues, DEV.to
+bash scripts/search-all.sh "your query" --competitors-only # GitHub repos, npm, crates.io
+```
+
+| Script | Signal type | API |
+|---|---|---|
+| `search-reddit.sh "[query]"` | complaint | Reddit JSON API |
+| `search-hn.sh "[query]"` | complaint | HN Algolia |
+| `search-stackoverflow.sh "[query]"` | complaint | Stack Exchange API |
+| `search-github-issues.sh "[query]"` | complaint | GitHub Search API |
+| `search-devto.sh "[tag]"` | workaround | DEV.to API |
+| `search-github.sh "[topic]"` | competitor | GitHub Search API |
+| `search-npm.sh "[query]"` | competitor | npm Registry |
+| `search-crates.sh "[query]"` | competitor | crates.io API |
+
+**Sources without a script (manual only):** Lobste.rs, Google Trends, Twitter/X, ProductHunt, PyPI, Indie Hackers, G2/Capterra.
 
 ---
 
