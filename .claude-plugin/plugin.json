@@ -7,6 +7,14 @@
     "url": "https://github.com/rutvij26"
   },
   "license": "MIT",
+  "homepage": "https://github.com/rutvij26/ideate",
   "repository": "https://github.com/rutvij26/ideate",
-  "keywords": ["idea-validation", "validation", "startup", "research", "evidence", "productivity"]
+  "documentationUrl": "https://github.com/rutvij26/ideate#readme",
+  "supportUrl": "https://github.com/rutvij26/ideate/issues",
+  "privacyPolicyUrl": "https://github.com/rutvij26/ideate/blob/main/PRIVACY.md",
+  "termsOfServiceUrl": "https://github.com/rutvij26/ideate/blob/main/LICENSE",
+  "keywords": ["idea-validation", "validation", "startup", "research", "evidence", "productivity"],
+  "classification": {
+    "categories": ["productivity", "developer-tools", "research"]
+  }
 }
