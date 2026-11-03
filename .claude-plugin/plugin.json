@@ -15,6 +15,9 @@
   "termsOfServiceUrl": "https://github.com/rutvij26/ideate/blob/main/LICENSE",
   "keywords": ["idea-validation", "validation", "startup", "research", "evidence", "productivity"],
   "classification": {
-    "categories": ["productivity", "developer-tools", "research"]
+    "object_acted_on": ["idea", "project"],
+    "work_department": "product",
+    "industry": "technology",
+    "subject": "idea validation"
   }
 }
