@@ -1,5 +1,5 @@
 {
-  "name": "@rutvij26/ideate",
+  "name": "@rutvijsathe/ideate",
   "version": "0.1.0",
   "description": "Evidence-backed idea validation skill for Claude Code",
   "bin": {

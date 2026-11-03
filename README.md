@@ -15,7 +15,7 @@ Works for founders, OSS devs, internal-tool builders, researchers, and learners.
 ## Install
 
 ```bash
-npx rutvij26/ideate
+npx @rutvijsathe/ideate
 ```
 
 Works on Unix, macOS, and Windows. Re-run to update.
