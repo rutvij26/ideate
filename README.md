@@ -14,6 +14,15 @@ Works for founders, OSS devs, internal-tool builders, researchers, and learners.
 
 ## Install
 
+```bash
+npx rutvij26/ideate
+```
+
+Works on Unix, macOS, and Windows. Re-run to update.
+
+<details>
+<summary>No Node? Use curl / PowerShell instead</summary>
+
 **Unix / macOS**
 ```bash
 curl -fsSL https://raw.githubusercontent.com/rutvij26/ideate/main/install.sh | bash
@@ -24,9 +33,7 @@ curl -fsSL https://raw.githubusercontent.com/rutvij26/ideate/main/install.sh | b
 irm https://raw.githubusercontent.com/rutvij26/ideate/main/install.ps1 | iex
 ```
 
-Re-run the same command to update to the latest version.
-
-**Manual**: Clone or download this repo and copy/symlink it to `~/.claude/skills/ideate/`.
+</details>
 
 ## Quick Start
 

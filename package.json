@@ -1,0 +1,23 @@
+{
+  "name": "@rutvij26/ideate",
+  "version": "0.1.0",
+  "description": "Evidence-backed idea validation skill for Claude Code",
+  "bin": {
+    "ideate": "bin/install.js"
+  },
+  "keywords": ["claude", "claude-code", "skill", "ideate", "idea-validation"],
+  "author": "rutvij26",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rutvij26/ideate"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "bin/",
+    "install.sh",
+    "install.ps1"
+  ]
+}
